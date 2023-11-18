@@ -8,6 +8,10 @@
   box-sizing: border-box;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 ::placeholder {
   color: rgb(252, 167, 30);
   opacity: 0.9; /* Firefox */
@@ -35,18 +39,24 @@ body {
 
 .form-box {
   width: 30vw;
-  height: 68vh;
+  height: calc(280px + 37vh);
   position: relative;
   border: 1px solid rgba(171, 171, 171, 0.551);
   border-radius: 20px;
   background-color: rgba(30, 30, 30, 0.345);
-  margin: 6% auto;
+  margin: 10vh auto;
   color: rgb(244, 241, 241);
   padding: 12px;
   font-family: "Shantell Sans", cursive;
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: hidden;
+}
+
+form {
+  margin-top: 12px;
+  min-height: 40vh;
 }
 
 .button-box {
@@ -54,7 +64,7 @@ body {
   display: flex;
   width: 304px;
   height: 50px;
-  margin: 30px auto;
+  margin: 3vh auto 2vh auto;
   border: 1px solid rgba(198, 196, 196, 0.345);
   border-radius: 30px;
   background-color: rgba(30, 30, 30, 0.345);
@@ -78,7 +88,7 @@ body {
   font-family: inherit;
 }
 
-#swap-bg {
+#swapBg {
   position: absolute;
   top: 0;
   left: 0;
@@ -86,15 +96,16 @@ body {
   height: 50px;
   border-radius: 30px;
   background: #fb9230;
-  transition: ease-in-out 0.5s;
+  transition: ease-in-out 1s;
 }
 
 .welcome {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 30px;
-  margin: 2vh 0 0 0;
+  font-size: calc(2vh + 10px);
+  margin: 20px auto;
+  transition: ease-in-out 0.5s;
 }
 
 .input-group {
@@ -102,6 +113,9 @@ body {
   align-items: center;
   flex-direction: column;
   width: 26vw;
+  position: absolute;
+  top: 20vh;
+  transition: ease-in-out 1s;
 }
 
 .top-of-form {
@@ -127,39 +141,74 @@ body {
   font-size: 15px;
 }
 
+#policy {
+  margin: 10px 0 0 0;
+  color: #f5bd31;
+  padding-left: 12px;
+  text-decoration: inherit;
+  font-size: 14px;
+}
+
 .submit-btn {
-  background-color: rgba(251, 156, 68, 0.426);
+  position: absolute;
+  top: calc(180px + 10vh);
+  background-color: #f8c032c6;
   margin-top: 5vh;
   color: #070606;
   border: 2px solid #07060677;
   font-family: inherit;
-  font-size: 40px;
+  font-size: 4vh;
   padding: 1.3vh 4vw;
-  letter-spacing: 2.5px;
+  letter-spacing: 0.1vw;
   border-radius: 10px;
-  transition: all ease-in-out 0.5s;
+  transition: ease-in-out 0.5s;
+  transition-property: background-color, color, border, letter-spacing;
   cursor: pointer;
 }
 
 .submit-btn:hover {
-  background-color: #fb9230;
+  background-color: #f8c032;
   color: #070606;
   border: 2px solid #070606;
   letter-spacing: 5px;
 }
 
+.submit-btn:active {
+  transform: translateY(-1%) translateX(-0.2%);
+}
+
 footer {
   position: absolute;
   top: 92%;
-  left: 39%;
+  left: 0;
   display: flex;
+  justify-content: center;
+  width: 100vw;
   gap: 30px;
-  align-items: center;
 }
 
 lottie-player {
-  width: 60px;
-  height: 60px;
+  width: 6vh;
+  height: 6vh;
   filter: invert(71%) sepia(23%) saturate(3922%) hue-rotate(336deg)
     brightness(100%) contrast(98%);
+}
+
+#logIn {
+  left: 40vw;
+}
+
+#forgetPassword {
+  margin: 10px 0 0 0;
+  color: #f5bd31;
+  font-weight: 600;
+  text-decoration: inherit;
+  font-size: calc(1vh + 9px);
+  position: absolute;
+  top: calc(50px + 13vh);
+  left: calc(38px + 13.9vw);
+}
+
+#forgetPassword:active {
+  transform: translateY(2%);
 }

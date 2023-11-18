@@ -10,15 +10,29 @@
     <div class="main">
       <div class="form-box">
         <div class="button-box">
-          <div id="swap-bg"></div>
-          <button type="button" class="toggle-btn">Sign Up</button>
-          <button type="button" class="toggle-btn">Log In</button>
+          <div id="swapBg"></div>
+          <button
+            id="signBtn"
+            type="button"
+            class="toggle-btn"
+            onclick="rightSwap()"
+          >
+            Sign Up
+          </button>
+          <button
+            id="logBtn"
+            type="button"
+            class="toggle-btn"
+            onclick="leftSwap()"
+          >
+            Log In
+          </button>
         </div>
         <div class="welcome">
           <h3 class="welcome-text">Sign Up For Free</h3>
         </div>
 
-        <form class="input-group">
+        <form id="signUp" class="input-group">
           <div class="top-of-form">
             <input
               type="text"
@@ -46,6 +60,32 @@
             placeholder="Set A Password *"
             required
           />
+
+          <a id="policy" href="#"
+            >By registering, you agree to the Terms, Data Policy and Cookies
+            Policy.</a
+          >
+
+          <button type="button" class="submit-btn">GET STARTED</button>
+        </form>
+
+        <!-- log in form  -->
+
+        <form id="logIn" class="input-group">
+          <input
+            type="email"
+            class="input-field"
+            placeholder="Email Address *"
+            required
+          />
+          <input
+            type="password"
+            class="input-field"
+            placeholder="Password *"
+            required
+          />
+
+          <a id="forgetPassword" href="#">Forget Password? </a>
 
           <button type="button" class="submit-btn">GET STARTED</button>
         </form>
@@ -112,17 +152,13 @@
           <lottie-player
             src="https://lottie.host/d719e807-8d05-41cd-a661-e5dd16985e7a/0TpsWB1o26.json"
             speed="1"
-            style="width: 52px; height: 52px"
+            style="width: 5.5vh; height: 5.5vh"
             loop
             autoplay
             direction="1"
             mode="normal"
           ></lottie-player>
         </a>
-      </div>
-
-      <div class="social-icons">
-        <a href=""> </a>
       </div>
     </footer>
 
