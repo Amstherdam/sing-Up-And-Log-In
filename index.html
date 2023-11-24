@@ -32,46 +32,65 @@
           <h3 class="welcome-text">Sign Up For Free</h3>
         </div>
 
-        <form id="signUp" class="input-group">
-          <div class="top-of-form">
-            <input
-              type="text"
-              class="input-field"
-              placeholder="Firts Name *"
-              required
-            />
-            <input
-              type="text"
-              class="input-field"
-              placeholder="Last Name *"
-              required
-            />
-          </div>
+        <form id="signUp" class="input-group" novalidate>
+          <ul class="top-of-form">
+            <li>
+              <input
+                type="text"
+                class="input-field"
+                placeholder="Firts Name *"
+                minlength="3"
+                required
+              />
+            </li>
 
-          <input
+            <li>
+              <input
+                type="text"
+                class="input-field"
+                placeholder="Last Name *"
+                minlength="3"
+                required
+              />
+            </li>
+          </ul>
+
+          <ul>
+            <li>
+              <input
             type="email"
             class="input-field"
             placeholder="Email Address *"
             required
           />
-          <input
-            type="password"
-            class="input-field"
-            placeholder="Set A Password *"
-            required
-          />
+            </li>
+            
+            <li>
+              <input
+              type="password"
+              class="input-field"
+              placeholder="Set A Password *"
+              minlength="8"
+              required
+            />
+            </li>
+          </ul>
+         
 
           <a id="policy" href="#"
             >By registering, you agree to the Terms, Data Policy and Cookies
             Policy.</a
           >
 
-          <button type="button" class="submit-btn">GET STARTED</button>
+          <li id="btnLi">
+            <button type="submit" class="submit-btn">GET STARTED</button>
+          </li>
+          
         </form>
-
+        
         <!-- log in form  -->
 
-        <form id="logIn" class="input-group">
+        <form id="logIn" class="input-group" novalidate>
           <input
             type="email"
             class="input-field"
@@ -87,7 +106,9 @@
 
           <a id="forgetPassword" href="#">Forget Password? </a>
 
-          <button type="button" class="submit-btn">GET STARTED</button>
+          <li id="btnLi2">
+            <button type="submit" class="submit-btn">GET STARTED</button>
+          </li>
         </form>
       </div>
     </div>
