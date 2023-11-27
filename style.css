@@ -125,7 +125,7 @@ form {
   gap: 20px;
 }
 
-.top-of-form  > li > input {
+.top-of-form > li > input {
   width: 12vw;
 }
 
@@ -150,8 +150,7 @@ form {
   font-size: 14px;
 }
 
-#btnLi { 
-  
+#btnLi {
   width: calc(15vw + 200px);
   height: calc(10vh + 30px);
   display: flex;
@@ -159,10 +158,9 @@ form {
   justify-content: center;
 }
 
-
-#btnLi2 { 
+#btnLi2 {
   width: calc(15vw + 200px);
-  height: calc(30vh + 30px);
+  height: calc(20vh + 30px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -222,9 +220,9 @@ lottie-player {
   font-weight: 600;
   text-decoration: inherit;
   font-size: calc(1vh + 9px);
-  position: absolute;
-  top: calc(50px + 13vh);
-  left: calc(38px + 13.9vw);
+  display: flex;
+  justify-content: flex-end;
+  width: calc(23vw + 40px);
 }
 
 #forgetPassword:active {
@@ -233,17 +231,17 @@ lottie-player {
 
 /* ! form validation error msg */
 
-small { 
+small {
   transition: all ease-in-out 0.5;
 }
 
-.error-msg { 
+.error-msg {
   color: rgb(0, 0, 0);
   font-size: 16px;
   font-weight: 600;
-  transform: translateY(2px);  
+  transform: translateY(2px);
 }
 
-.error { 
+.error {
   border: solid 1px #070606;
 }

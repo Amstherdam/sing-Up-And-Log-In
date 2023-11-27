@@ -64,4 +64,52 @@ form1.addEventListener("submit", function (e) {
   [...this.elements].forEach((formElement) => {
     formElementValidateF(formElement);
   });
+
+  if (this.checkValidity()) {
+    console.log("tum form dolu");
+  }
+});
+
+/* Form 2  */
+
+const form2 = document.getElementById("logIn");
+
+function form2ElementValidateF(loginElement) {
+  if (!loginElement.checkValidity()) {
+    loginElement.closest("input").classList.add("error");
+
+    if (loginElement.nextElementSibling?.className !== "error-msg") {
+      const error = document.createElement("small");
+      error.className = "error-msg";
+      error.innerText = "*" + loginElement.validationMessage;
+      loginElement.insertAdjacentElement("afterend", error);
+    } else {
+      loginElement.nextElementSibling.innerHTML =
+        loginElement.validationMessage;
+    }
+  } else {
+    if (loginElement.nextElementSibling?.className === "error-msg") {
+      loginElement.nextElementSibling.remove();
+      loginElement.closest("input").classList.remove("error");
+    }
+  }
+}
+
+[...form2.elements].forEach((loginElement) => {
+  ["change", "keyup"].forEach((method) => {
+    loginElement.addEventListener(method, () => {
+      form2ElementValidateF(loginElement);
+    });
+  });
+});
+
+form2.addEventListener("submit", function (e) {
+  e.preventDefault();
+  [...this.elements].forEach((loginElement) => {
+    form2ElementValidateF(loginElement);
+  });
+
+  if (this.checkValidity()) {
+    console.log("tum form dolu");
+  }
 });
